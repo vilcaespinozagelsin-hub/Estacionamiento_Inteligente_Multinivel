@@ -1,0 +1,76 @@
+.role-toggle{display:flex;align-items:center;gap:7px;border:1px solid #e9e7fb;background:#faf9ff;color:#6656d8;border-radius:7px;padding:7px 9px;font:600 9px var(--font);cursor:pointer}.role-toggle:hover{background:#f1efff}.role-toggle-icon{font-size:12px}.toggle-arrow{font-size:12px}.client-mode .sidebar .upgrade-card{background:linear-gradient(150deg,#f4fbf9,#eaf8f3);border-color:#e1f1eb}.client-mode .sidebar .upgrade-icon{color:#20a886}.client-mode .sidebar .upgrade-card strong{color:#285d50}.client-mode .simulation-panel,.client-mode .activity-panel,.client-mode .lower-grid{display:none}.client-mode .metrics .metric-card:nth-child(n+3){display:none}.client-mode .metrics{grid-template-columns:repeat(2,1fr)}.client-mode .sidebar .nav-item[data-page="activity"],.client-mode .sidebar .nav-item[data-page="reservations"],.client-mode .sidebar .nav-item[data-page="settings"],.client-mode .sidebar .nav-item[data-page="help"]{display:none}.client-mode .page-heading .eyebrow{color:#25a281}.client-mode .map-panel{box-shadow:0 0 0 1px #f0efff}.client-mode .parking-space.free{cursor:pointer}.client-mode .parking-space.free:hover{outline:2px solid #31ae8e;outline-offset:1px}
+.main-area{background:linear-gradient(135deg,rgba(8,18,37,.56),rgba(10,27,54,.38)),url("assets/parking-background.jpg") center center/cover fixed}.page-heading{background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.68);border-radius:10px;padding:14px 17px;backdrop-filter:blur(5px)}.footer{background:rgba(255,255,255,.91);border-radius:8px;padding:10px 12px;margin-top:5px}
+/* Unified interactive states and color for every control and tab. */
+.button,.run-button,.role-toggle,.nav-item,.floor-tab,.text-button,.activity-footer,.more-button,.period-select,.icon-button{transition:background-color .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease}
+.button:focus-visible,.run-button:focus-visible,.role-toggle:focus-visible,.nav-item:focus-visible,.floor-tab:focus-visible,.text-button:focus-visible,.activity-footer:focus-visible,.more-button:focus-visible,.period-select:focus-visible,.icon-button:focus-visible{outline:3px solid #b7aff8;outline-offset:2px}
+.button-light:hover,.button-small:hover,.period-select:hover{color:#5846d2;border-color:#bdb5fa;background:#f3f1ff}
+.button-primary:hover,.run-button:hover{background:#5744d0;border-color:#5744d0;box-shadow:0 4px 12px #6958e84d;transform:translateY(-1px)}
+.nav-item:hover{background:#f1efff;color:#5e4bd8}.nav-item.active{background:#ebe8ff;color:#5b49d5;box-shadow:inset 3px 0 #6958e8}
+.floor-tab{border-radius:7px 7px 0 0}.floor-tab:hover{background:#f5f3ff;color:#5e4bd8}.floor-tab.selected{background:#f4f2ff;color:#5846d2;border-color:#6958e8}
+.text-button:hover,.activity-footer:hover,.learn-more:hover{color:#4937c3;text-decoration:underline}.more-button:hover,.icon-button:hover{color:#6958e8;background:#f1efff;border-radius:6px}.role-toggle:hover{background:#efedff;border-color:#d4cffd}.parking-space{cursor:pointer}
+.tab-page[hidden]{display:none}.content.has-open-page>:not(.page-heading):not(#tabPage){display:none!important}.tab-page{min-height:250px;padding:22px}.tab-page>.panel-heading{margin-bottom:18px}.tab-page-title{font:700 18px var(--display);margin:0 0 5px}.tab-page-subtitle{color:#858995;font-size:11px;margin:0}.reservation-table{width:100%;border-collapse:collapse;margin-top:17px}.reservation-table th,.reservation-table td{text-align:left;border-bottom:1px solid #eceef2;padding:11px 9px;font-size:10px}.reservation-table th{color:#90929d;font-size:9px;letter-spacing:.6px}.reservation-table td{color:#4a4c56}.reservation-table .button{padding:6px 9px;font-size:9px}.settings-card{margin-top:15px;border:1px solid #eceef2;background:#fff;border-radius:9px;padding:16px;max-width:570px}.settings-card label{display:block;color:#676975;font-size:10px;font-weight:600;margin-bottom:7px}.settings-card select{border:1px solid #e2e3ea;border-radius:6px;padding:9px 12px;color:#514f63;background:#fff;font:500 11px var(--font);min-width:230px}.settings-actions{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap}.help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:18px}.help-card{border:1px solid #eceaf9;border-radius:9px;padding:14px;background:#fbfaff}.help-card b{color:#5142bd;font:700 12px var(--display)}.help-card p{color:#777985;font-size:10px;line-height:1.6;margin:7px 0 0}.history-list{display:grid;gap:0;margin-top:14px}.history-list .activity-item{padding:13px 3px}.client-mode .page-heading{background:rgba(255,255,255,.97)}
+/* Responsive polish for the full dashboard and its routed pages. */
+@media(max-width:920px){.page-heading{padding:14px;gap:12px}.page-heading .heading-actions{align-self:flex-start;margin:0;flex-wrap:wrap}.main-area{background-attachment:scroll}}
+@media(max-width:650px){.content{padding:18px 12px}.page-heading h1{font-size:20px;line-height:1.3;overflow-wrap:anywhere}.page-heading p{line-height:1.5}.heading-actions{width:100%;display:flex;flex-wrap:wrap;gap:7px}.heading-actions .button{flex:1 1 auto;justify-content:center}.topbar{padding:0 10px}.breadcrumbs{gap:5px;font-size:10px}.top-actions{gap:7px}.role-toggle{padding:7px;font-size:8px}.live-status{font-size:9px}.top-user{gap:4px}.main-grid,.lower-grid{gap:10px}.floor-tabs{overflow-x:auto;white-space:nowrap}.map-wrap{height:auto;min-height:248px;padding:22px 22px 10px}.parking-map{grid-template-columns:repeat(5,minmax(0,1fr));gap:7px 6px}.parking-space{height:30px}.map-side-label{right:0;top:95px}.map-legend{gap:8px 12px}.simulation-controls{width:100%;justify-content:flex-start}.simulation-controls select{max-width:47vw}.sim-stats{gap:10px}.sim-stats>div{min-width:0}.tab-page{padding:15px}.reservation-table{display:block;overflow-x:auto;white-space:nowrap}.footer{align-items:flex-start;gap:8px}.footer span{max-width:50%}}
+/* Consistent color on secondary buttons, tabs, and selected navigation. */
+.button-light,.period-select{background:#f3f1ff;border-color:#e2deff;color:#5b4acb}.button-light:hover,.period-select:hover{background:#e9e5ff;border-color:#c9c0ff;color:#4837bd}
+.floor-tab:not(.selected){background:#faf9ff;color:#7468cf}.floor-tab:not(.selected):hover{background:#efedff;color:#5846d2}.activity-footer{background:#faf9ff;color:#5e4bd0}.activity-footer:hover{background:#f0edff}.nav-item:not(.active){background:#faf9ff;color:#6f6b8a}.nav-item:not(.active):hover{background:#efedff;color:#5846d2}
+/* Final layout corrections for the visible parking map and fixed sidebar. */
+.sidebar{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#dedaf5 transparent;padding-top:20px}.sidebar .brand{margin-bottom:25px}.sidebar .nav-caption{margin-top:23px}.sidebar .tools-caption{margin-top:20px}.sidebar .nav-item{min-height:40px;padding-top:8px;padding-bottom:8px}.sidebar .upgrade-card{padding:12px 13px;margin-bottom:12px}.sidebar .profile{padding-top:10px;flex-shrink:0}.map-wrap{height:132px;padding-top:16px;padding-bottom:8px}.map-label{white-space:nowrap;font-size:7px;letter-spacing:.35px;z-index:1}.parking-map{align-content:start}
+@media(max-width:650px){.sidebar{padding-top:18px}.sidebar .brand{margin-bottom:24px}.sidebar .nav-caption{margin-top:18px}.sidebar .tools-caption{margin-top:16px}.map-wrap{height:auto;min-height:230px;padding-top:22px}.parking-map{align-content:start}}
+/* Brand color pass: stronger active states and clear CTA hierarchy. */
+:root{--purple:#5e4bd6;--purple-dark:#4936be}
+.button-primary,.run-button{background:linear-gradient(135deg,#725cf0 0%,#5542cf 100%);border-color:#5b48d4;color:#fff;box-shadow:0 4px 12px rgba(88,70,210,.24)}
+.button-primary:hover,.run-button:hover{background:linear-gradient(135deg,#6049dc 0%,#4633bd 100%);border-color:#4936be;color:#fff;box-shadow:0 5px 15px rgba(75,55,190,.34)}
+.button-light,.period-select{background:#f0edff;border:1px solid #d9d2ff;color:#4938bc}
+.button-light:hover,.period-select:hover{background:#e5e0ff;border-color:#bdb2ff;color:#3929a8}
+.nav-item.active{background:linear-gradient(100deg,#6650df,#5845cf);color:#fff;box-shadow:0 4px 12px rgba(88,69,207,.2),inset 3px 0 #3928ae}
+.nav-item.active .nav-icon{color:#fff}.nav-item:not(.active){background:#f7f5ff;color:#635b83}.nav-item:not(.active):hover{background:#eeebff;color:#4d3bc5}
+.floor-tab{background:#f8f7ff;color:#675baf;border-bottom-color:transparent}.floor-tab.selected{background:linear-gradient(180deg,#6d57e8,#5844cf);color:#fff;border-color:#5844cf;border-radius:7px 7px 0 0;box-shadow:0 3px 9px rgba(88,68,207,.2)}.floor-tab.selected span{color:#eeeaff}.floor-tab:not(.selected):hover{background:#eeebff;color:#4938bc}
+.activity-footer{background:#f5f2ff;color:#4d3bc5}.activity-footer:hover{background:#ece8ff;color:#3929a8}.role-toggle{background:#efecff;border-color:#d7d0ff;color:#4f3ec5}.role-toggle:hover{background:#e4dfff;border-color:#bdb2ff;color:#3929a8}
+.run-button.running{background:#e8f7f1;border-color:#ccece0;color:#167b61;box-shadow:none}.run-button.running:hover{background:#d9f1e8;border-color:#b5e4d4;color:#126a54}
+
+/* Identidad visual renovada: panel más vivo y estados fáciles de distinguir. */
+:root{--purple:#6046d8;--purple-dark:#4932bb;--mint:#159b7c;--canvas:#eef2fb;--ink:#18233b;--line:#e3e8f2}
+body{background:#e9eef8;color:#18233b}
+.main-area{background:linear-gradient(135deg,rgba(8,20,47,.76),rgba(26,35,91,.58)),url("assets/parking-background.jpg") center/cover fixed}
+.topbar,.sidebar{background:rgba(255,255,255,.97)}
+.topbar{box-shadow:0 3px 18px rgba(18,27,60,.08)}
+.page-heading{background:linear-gradient(115deg,#fff 0%,#f4f2ff 68%,#edf7ff 100%);border-color:#fff;box-shadow:0 10px 28px rgba(16,26,60,.14)}
+.page-heading .eyebrow{color:#6253bd}.page-heading .eyebrow-line{background:#7965ed}
+.panel,.tab-page{background:rgba(255,255,255,.98);border:1px solid rgba(255,255,255,.8);border-radius:13px;box-shadow:0 10px 28px rgba(10,20,48,.17)}
+.metric-card{border:1px solid #e8e8f8;border-radius:12px;background:linear-gradient(145deg,#fff 58%,#f6f4ff);box-shadow:0 7px 20px rgba(16,26,60,.1);position:relative;overflow:hidden}
+.metric-card:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#6e57e8,#9c7af4)}
+.metric-card:nth-child(2):before{background:linear-gradient(90deg,#17a886,#65d1ad)}.metric-card:nth-child(3):before{background:linear-gradient(90deg,#e49a37,#ffd078)}.metric-card:nth-child(4):before{background:linear-gradient(90deg,#e36c82,#f5a0ab)}
+.metric-icon.indigo{background:#eeeaff;color:#6046d8}.metric-icon.mint{background:#e2f7f0;color:#12876c}.metric-icon.amber{background:#fff2db;color:#b76a16}.metric-icon.rose{background:#ffebef;color:#c74f69}
+.button-primary,.run-button{background:linear-gradient(135deg,#7458ed,#5036c8);border:1px solid #5941d0;color:#fff;box-shadow:0 6px 15px rgba(83,57,205,.3)}
+.button-primary:hover,.run-button:hover{background:linear-gradient(135deg,#6345df,#4229b7);box-shadow:0 8px 19px rgba(83,57,205,.38);transform:translateY(-1px)}
+.button-light,.period-select{background:linear-gradient(135deg,#f4f1ff,#eae7ff);border:1px solid #d8d0ff;color:#503bbf}
+.role-toggle{background:#eeeaff;border:1px solid #d8d0ff;color:#503bbf}.role-toggle:hover{background:#e3ddff}
+.nav-item:not(.active){background:#f5f3ff;color:#595479}.nav-item.active{background:linear-gradient(105deg,#7157ed,#4e37c9);color:#fff;box-shadow:0 6px 14px rgba(82,58,199,.25),inset 3px 0 #3824a9}
+.floor-tab:not(.selected){background:#f5f3ff;color:#6054a0}.floor-tab.selected{background:linear-gradient(180deg,#7c63ef,#5740ca);color:#fff;border-color:#5740ca}
+.parking-space{font-weight:700;border-width:1px}.parking-space.free{background:#dff6ed;border-color:#a9e6d0;color:#08785f}.parking-space.occupied{background:#eae5ff;border-color:#c9bfff;color:#523cc2}.parking-space.reserved{background:#fff0d9;border-color:#f0cf8d;color:#98600a}.parking-space.blocked{background:#ffe5e5;border-color:#efa9a9;color:#a52d36}
+.legend-dot.free{background:#159b7c}.legend-dot.occupied{background:#6046d8}.legend-dot.reserved{background:#db941e}.legend-dot.blocked{background:#d94a52}
+.activity-symbol.entry{background:#def6ee;color:#0c8267}.activity-symbol.exit{background:#e9e5ff;color:#5941ca}.activity-symbol.reservation{background:#fff0da;color:#a8670d}
+.activity-footer{background:#f2efff;color:#4e37c9}.upgrade-card{background:linear-gradient(145deg,#f5f2ff,#e9e7ff);border-color:#ddd6ff}.online-dot{background:#159b7c}
+.simulation-panel{border-top:3px solid #7157e8}.sim-state i{background:#23a887}.modal{border-top:4px solid #7057e8;box-shadow:0 25px 75px rgba(15,20,55,.3)}
+.footer{color:#f3f5ff;background:rgba(13,24,53,.84);border:1px solid rgba(255,255,255,.15);box-shadow:0 8px 22px rgba(5,12,32,.2)}.footer span:last-child{color:#baf1dc}
+.footer .online-dot{background:#35d7a1;box-shadow:0 0 0 3px rgba(53,215,161,.15)}
+.button:focus-visible,.run-button:focus-visible,.role-toggle:focus-visible,.nav-item:focus-visible,.floor-tab:focus-visible,.text-button:focus-visible,.activity-footer:focus-visible,.more-button:focus-visible,.period-select:focus-visible,.icon-button:focus-visible,.parking-space:focus-visible{outline:3px solid #8e7cff;outline-offset:3px}
+@media(max-width:920px){.main-area{background-attachment:scroll}}
+
+/* Selección explícita del espacio antes de registrar la entrada. */
+.parking-space.selected{position:relative;z-index:1;outline:3px solid #6046d8;outline-offset:2px;box-shadow:0 0 0 5px rgba(96,70,216,.18);transform:translateY(-1px)}
+#blockSelectedBtn:disabled{opacity:.52;cursor:not-allowed;box-shadow:none;transform:none}
+.client-mode #blockSelectedBtn{display:none}
+@media(max-width:650px){.heading-actions #blockSelectedBtn{flex:1 1 100%}}
+.rate-summary{margin:-3px 0 14px;padding:10px 12px;border:1px solid #d8d0ff;border-radius:8px;background:linear-gradient(110deg,#f4f1ff,#edf7ff);color:#4936b9;font-size:12px;font-weight:700}
+.modal{max-height:calc(100vh - 32px);overflow-y:auto;overscroll-behavior:contain}
+.rate-summary{display:grid;gap:4px}.rate-summary span{font-size:12px}.rate-summary small{font-size:10px;font-weight:500;color:#61568e}
+.time-window{display:grid;grid-template-columns:minmax(95px,1fr) auto minmax(95px,1fr);align-items:end;gap:8px;margin:0 0 14px;padding:11px;border:1px solid #e6e2fa;border-radius:9px;background:#faf9ff}
+.time-window label{display:block;margin:0;font-size:10px;color:#625d7c}
+.time-window input{display:block;width:100%;margin:6px 0 0;padding:8px;border:1px solid #e1def0;border-radius:6px;background:#fff;color:#28243c;font:600 11px var(--font)}
+.time-window>span{padding-bottom:10px;color:#7664dd;font-weight:700}
+.time-window button{grid-column:1/-1;justify-self:start;padding:6px 9px;font-size:9px}
+.parking-space .space-time{position:absolute;right:2px;bottom:1px;padding:1px 3px;border-radius:4px;background:rgba(255,255,255,.88);color:#5742bd;font-size:6px;font-weight:800;line-height:1.1;pointer-events:none}
+.client-mode #reserveSelectedBtn{display:inline-flex}

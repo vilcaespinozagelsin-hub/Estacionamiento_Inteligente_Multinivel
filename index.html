@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f9">
+  <title>VILCA — Estacionamiento inteligente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=local-bridge-2-20261026">
+  <link rel="stylesheet" href="roles.css?v=local-bridge-2-20261026">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Vilca inicio"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 7h5l5 11 5-11h5L18 25h-4L6 7Z" fill="currentColor"/></svg></span><span>VILCA<span class="brand-dot">.</span></span></a>
+      <div class="workspace-label">CENTRO COMERCIAL</div>
+      <div class="location"><span class="location-icon">⌖</span><span><b>Plaza Central</b><small>Lima, Perú</small></span><span class="chevron">⌄</span></div>
+      <div class="nav-caption">ESPACIO DE TRABAJO</div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <button type="button" class="nav-item active" data-page="dashboard" aria-controls="tabPage" aria-current="page"><span class="nav-icon">◫</span>Resumen</button>
+        <button type="button" class="nav-item" data-page="parking" aria-controls="tabPage"><span class="nav-icon">▦</span>Mapa de espacios</button>
+        <button type="button" class="nav-item" data-page="activity" aria-controls="tabPage"><span class="nav-icon">↕</span>Actividad</button>
+        <button type="button" class="nav-item" data-page="reservations" aria-controls="tabPage"><span class="nav-icon">▤</span>Reservas <span class="nav-count" id="reserveCount">10</span></button>
+      </nav>
+      <div class="nav-caption tools-caption">HERRAMIENTAS</div>
+      <nav class="main-nav" aria-label="Herramientas"><button type="button" class="nav-item" data-page="settings" aria-controls="tabPage"><span class="nav-icon">⚙</span>Configuración</button><button type="button" class="nav-item" data-page="help" aria-controls="tabPage"><span class="nav-icon">?</span>Ayuda y soporte</button></nav>
+      <div class="sidebar-bottom"><div class="upgrade-card"><div class="upgrade-icon">✦</div><strong>Todo bajo control</strong><p>Tu estacionamiento está operando con normalidad.</p><span class="online-dot"></span> Sistema activo</div><button class="profile"><span class="avatar">V</span><span class="profile-name"><b>Vilca</b><small>Administradora</small></span></button></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar"><div class="breadcrumbs"><span>Plaza Central</span><span class="crumb-sep">/</span><b id="crumbTitle">Resumen</b></div><div class="top-actions"><button class="role-toggle" id="roleToggle"><span class="role-toggle-icon">◉</span><span id="roleLabel">Vista cliente</span><span class="toggle-arrow">↗</span></button><span class="live-status"><i></i> En vivo</span><button class="icon-button notification" aria-label="Notificaciones">♧<span></span></button><span class="top-divider"></span><div class="top-user"><span class="avatar small-avatar">V</span><span id="userLabel">Vilca</span><span class="chevron">⌄</span></div></div></header>
+      <div class="content">
+        <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> LUNES, 26 DE OCTUBRE, 2026</div><h1 id="pageTitle">Tu estacionamiento, bajo control, Vilca <span class="wave">✦</span></h1><p id="pageSubtitle">Aquí tienes el estado de tu estacionamiento hoy.</p></div><div class="heading-actions"><button class="button button-light" id="exportBtn"><span>⇩</span> Exportar reporte</button><button type="button" class="button button-light" id="blockSelectedBtn" disabled>Bloquear seleccionado</button><button type="button" class="button button-light" id="reserveSelectedBtn" disabled>Reservar espacio</button><button type="button" class="button button-light" id="printTicketBtn" disabled>▤ Imprimir boleto</button><button class="button button-primary" id="openEntry"><span>＋</span> Registrar entrada</button></div></div>
+
+        <section id="tabPage" class="tab-page panel" hidden></section>
+        <section class="metrics" aria-label="Indicadores del estacionamiento">
+          <article class="metric-card"><div class="metric-top"><span>ESPACIOS OCUPADOS</span><span class="metric-icon indigo">▦</span></div><div class="metric-value"><strong id="occupiedMetric">38</strong><span>/ 60 espacios</span></div><div class="metric-bottom"><div class="progress-track"><span id="occupancyBar" style="width:63%"></span></div><span class="metric-note"><b id="occupancyPct">63%</b> de capacidad</span></div></article>
+          <article class="metric-card"><div class="metric-top"><span>DISPONIBLES AHORA</span><span class="metric-icon mint">⌑</span></div><div class="metric-value"><strong id="availableMetric">7</strong><span>espacios libres</span></div><div class="metric-bottom"><span class="trend good">7 espacios libres</span><span class="metric-note">en los tres niveles</span></div></article>
+          <article class="metric-card"><div class="metric-top"><span>INGRESOS DE HOY</span><span class="metric-icon amber">S/</span></div><div class="metric-value"><strong id="revenueMetric">S/ 1,240</strong></div><div class="metric-bottom"><span class="trend good">↗ 12.8%</span><span class="metric-note">vs. ayer</span></div></article>
+          <article class="metric-card"><div class="metric-top"><span>EN LISTA DE ESPERA</span><span class="metric-icon rose">☷</span></div><div class="metric-value"><strong id="queueMetric">3</strong><span>vehículos esperando</span></div><div class="metric-bottom"><span class="trend warning">● Atención requerida</span></div></article>
+        </section>
+
+        <section class="main-grid">
+          <article class="panel map-panel"><div class="panel-heading"><div><div class="section-kicker">VISTA EN TIEMPO REAL</div><h2>Mapa del estacionamiento</h2></div><button class="text-button" data-page="parking">Ver mapa completo <span>→</span></button></div><div class="floor-tabs" id="floorTabs"><button class="floor-tab selected" data-floor="0">Nivel 1 <span>14/20</span></button><button class="floor-tab" data-floor="1">Nivel 2 <span>13/20</span></button><button class="floor-tab" data-floor="2">Nivel 3 <span>11/20</span></button></div><div class="map-wrap"><div class="map-label">ENTRADA <span>↓</span></div><div class="parking-map" id="parkingMap" aria-label="Mapa de espacios"></div><div class="map-side-label">RAMPA ↗</div></div><div class="map-legend"><span><i class="legend-dot free"></i>Disponible <b id="legendFree">4</b></span><span><i class="legend-dot occupied"></i>Ocupado</span><span><i class="legend-dot reserved"></i>Reservado</span><span><i class="legend-dot blocked"></i>Bloqueado</span></div></article>
+          <article class="panel activity-panel"><div class="panel-heading"><div><div class="section-kicker">MOVIMIENTOS RECIENTES</div><h2>Actividad en vivo</h2></div></div><div class="activity-list" id="activityList"></div><button class="activity-footer" data-page="activity">Ver toda la actividad <span>→</span></button></article>
+        </section>
+        <section class="lower-grid"><article class="panel floor-summary"><div class="panel-heading"><div><div class="section-kicker">DISTRIBUCIÓN</div><h2>Ocupación por nivel</h2></div><button class="period-select">Hoy⌄</button></div><div class="floor-bars" id="floorBars"></div></article><article class="panel smart-panel"><div class="smart-heading"><span class="sparkle">✦</span><div><div class="section-kicker">PREDICCIÓN INTELIGENTE</div><h2>¿Qué está pasando?</h2></div></div><div class="prediction"><div class="prediction-badge">● Ocupación moderada</div><p id="predictionText">La demanda suele aumentar entre las <b>12:00 y 14:00</b>. El nivel 3 tiene más espacios disponibles.</p></div><div class="prediction-foot"><span>Basado en las últimas 24 h</span><span class="learn-more">Ver análisis →</span></div></article></section>
+        <section class="panel simulation-panel"><div class="panel-heading"><div><div class="section-kicker">MODO DEMOSTRACIÓN</div><h2>Simulación de asignación</h2><p class="panel-subtitle">Compara cómo se asignan los espacios en tiempo real.</p></div><div class="simulation-controls"><span class="policy-label">Política</span><select id="policySelect" aria-label="Política de asignación"><option value="cost">Menor costo estimado</option><option value="first">Primer espacio libre</option></select><button class="button button-light button-small" id="stepBtn">Avanzar paso <span>→</span></button><button class="button button-light button-small" id="resetBtn">↺ Reiniciar</button></div></div><div class="sim-stats"><div><small>MOVIMIENTOS</small><b id="moveCount">0 <span>/ 80</span></b></div><div><small>RESERVAS ACTIVAS</small><b id="reservationMetric">10 <span>/ 10</span></b></div><div><small>BLOQUEOS</small><b id="blockedMetric">5 <span>/ 5</span></b></div><div><small>DISTANCIA PROMEDIO</small><b id="distanceMetric">— <span>m</span></b></div><div><small>ESTADO</small><b class="sim-state"><i></i> Lista para iniciar</b></div><button class="run-button" id="runBtn">▶ Iniciar</button></div></section>
+        <footer class="footer"><span>© 2026 VILCA · Estacionamiento inteligente</span><span><i class="online-dot"></i> Todos los sistemas operativos</span></footer>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="entryModal" aria-hidden="true"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="closeModal" aria-label="Cerrar">×</button><div class="section-kicker">ACCESO VEHICULAR</div><h2 id="modalTitle">Registrar entrada</h2><p class="modal-intro" id="entryIntro">Selecciona primero un espacio vacío en el mapa y completa los datos del vehículo.</p><form id="entryForm"><label for="plateInput">Placa del vehículo</label><input id="plateInput" name="plate" placeholder="ABC-123" maxlength="8" required><label for="vehicleType">Tipo de vehículo</label><select id="vehicleType"><option value="auto">Auto</option><option value="camion">Camión</option><option value="moto">Moto</option></select><label for="parkingDuration">Tiempo de estacionamiento</label><select id="parkingDuration"><option value="30">30 minutos — S/ 10</option><option value="60">60 minutos — S/ 20</option></select><div class="time-window"><label for="startTime">Hora de inicio<input id="startTime" type="time" readonly></label><span aria-hidden="true">→</span><label for="endTime">Hora de término<input id="endTime" type="time" readonly></label><button type="button" class="button button-light button-small" id="refreshStartTime">Actualizar inicio</button></div><label for="paymentType">Tipo de pago</label><select id="paymentType"><option value="Efectivo">Efectivo</option><option value="Tarjeta">Tarjeta</option><option value="Yape / Plin">Yape / Plin</option></select><div class="rate-summary"><span id="rateSummary">Total a pagar: S/ 10</span><small>La misma tarifa aplica para autos, camiones y motos.</small></div><div class="assignment-preview"><span class="preview-icon">✦</span><span><b>Asignación inteligente</b><small id="assignmentHint">Encontraremos el espacio más conveniente para ti.</small></span></div><div class="modal-actions"><button type="button" class="button button-light" id="cancelModal">Cancelar</button><button type="submit" class="button button-primary">Confirmar entrada <span>→</span></button></div></form></section></div>
+  <div class="toast" id="toast" role="status"></div>
+  <section id="ticketPrint" aria-label="Boleto de estacionamiento"></section>
+  <script src="app.js?v=local-bridge-2-20261026"></script>
+</body>
+</html>
+
