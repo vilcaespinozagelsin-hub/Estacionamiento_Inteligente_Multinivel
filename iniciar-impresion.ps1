@@ -8,4 +8,4 @@ try { Invoke-RestMethod -Uri ($url + 'health') -TimeoutSec 2 | Out-Null } catch 
   for ($i=0; $i -lt 25; $i++) { Start-Sleep -Milliseconds 400; try { Invoke-RestMethod -Uri ($url + 'health') -TimeoutSec 1 | Out-Null; $ready=$true; break } catch { } }
   if (-not $ready) { Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('No se pudo iniciar la central local de impresión. Comprueba que el puerto 8765 esté libre.','VILCA - Impresión') | Out-Null; exit 1 }
 }
-Start-Process $url
+& (Join-Path $root 'iniciar-wifi.ps1')

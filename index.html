@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=local-bridge-2-20261026">
-  <link rel="stylesheet" href="roles.css?v=local-bridge-2-20261026">
+  <link rel="stylesheet" href="styles.css?v=shared-sync-20261027">
+  <link rel="stylesheet" href="roles.css?v=shared-sync-20261027">
 </head>
 <body>
   <div class="app-shell">
@@ -30,7 +30,7 @@
     </aside>
 
     <main class="main-area">
-      <header class="topbar"><div class="breadcrumbs"><span>Plaza Central</span><span class="crumb-sep">/</span><b id="crumbTitle">Resumen</b></div><div class="top-actions"><button class="role-toggle" id="roleToggle"><span class="role-toggle-icon">◉</span><span id="roleLabel">Vista cliente</span><span class="toggle-arrow">↗</span></button><span class="live-status"><i></i> En vivo</span><button class="icon-button notification" aria-label="Notificaciones">♧<span></span></button><span class="top-divider"></span><div class="top-user"><span class="avatar small-avatar">V</span><span id="userLabel">Vilca</span><span class="chevron">⌄</span></div></div></header>
+      <header class="topbar"><div class="breadcrumbs"><span>Plaza Central</span><span class="crumb-sep">/</span><b id="crumbTitle">Resumen</b></div><div class="top-actions"><button class="role-toggle" id="roleToggle"><span class="role-toggle-icon">◉</span><span id="roleLabel">Vista cliente</span><span class="toggle-arrow">↗</span></button><span class="live-status" title="Estado de sincronización"><i></i> Conectando…</span><button class="icon-button notification" aria-label="Notificaciones">♧<span></span></button><span class="top-divider"></span><div class="top-user"><span class="avatar small-avatar">V</span><span id="userLabel">Vilca</span><span class="chevron">⌄</span></div></div></header>
       <div class="content">
         <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> LUNES, 26 DE OCTUBRE, 2026</div><h1 id="pageTitle">Tu estacionamiento, bajo control, Vilca <span class="wave">✦</span></h1><p id="pageSubtitle">Aquí tienes el estado de tu estacionamiento hoy.</p></div><div class="heading-actions"><button class="button button-light" id="exportBtn"><span>⇩</span> Exportar reporte</button><button type="button" class="button button-light" id="blockSelectedBtn" disabled>Bloquear seleccionado</button><button type="button" class="button button-light" id="reserveSelectedBtn" disabled>Reservar espacio</button><button type="button" class="button button-light" id="printTicketBtn" disabled>▤ Imprimir boleto</button><button class="button button-primary" id="openEntry"><span>＋</span> Registrar entrada</button></div></div>
 
@@ -56,7 +56,7 @@
   <div class="modal-backdrop" id="entryModal" aria-hidden="true"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="closeModal" aria-label="Cerrar">×</button><div class="section-kicker">ACCESO VEHICULAR</div><h2 id="modalTitle">Registrar entrada</h2><p class="modal-intro" id="entryIntro">Selecciona primero un espacio vacío en el mapa y completa los datos del vehículo.</p><form id="entryForm"><label for="plateInput">Placa del vehículo</label><input id="plateInput" name="plate" placeholder="ABC-123" maxlength="8" required><label for="vehicleType">Tipo de vehículo</label><select id="vehicleType"><option value="auto">Auto</option><option value="camion">Camión</option><option value="moto">Moto</option></select><label for="parkingDuration">Tiempo de estacionamiento</label><select id="parkingDuration"><option value="30">30 minutos — S/ 10</option><option value="60">60 minutos — S/ 20</option></select><div class="time-window"><label for="startTime">Hora de inicio<input id="startTime" type="time" readonly></label><span aria-hidden="true">→</span><label for="endTime">Hora de término<input id="endTime" type="time" readonly></label><button type="button" class="button button-light button-small" id="refreshStartTime">Actualizar inicio</button></div><label for="paymentType">Tipo de pago</label><select id="paymentType"><option value="Efectivo">Efectivo</option><option value="Tarjeta">Tarjeta</option><option value="Yape / Plin">Yape / Plin</option></select><div class="rate-summary"><span id="rateSummary">Total a pagar: S/ 10</span><small>La misma tarifa aplica para autos, camiones y motos.</small></div><div class="assignment-preview"><span class="preview-icon">✦</span><span><b>Asignación inteligente</b><small id="assignmentHint">Encontraremos el espacio más conveniente para ti.</small></span></div><div class="modal-actions"><button type="button" class="button button-light" id="cancelModal">Cancelar</button><button type="submit" class="button button-primary">Confirmar entrada <span>→</span></button></div></form></section></div>
   <div class="toast" id="toast" role="status"></div>
   <section id="ticketPrint" aria-label="Boleto de estacionamiento"></section>
-  <script src="app.js?v=local-bridge-2-20261026"></script>
+  <script src="app.js?v=shared-sync-20261027"></script>
 </body>
 </html>
 

@@ -83,6 +83,12 @@ try {
         }
         continue
       }
+      if ($path -eq '/' -and $request.HttpMethod -eq 'GET') {
+        $context.Response.StatusCode = 302
+        $context.Response.RedirectLocation = 'http://127.0.0.1:8766/'
+        $context.Response.Close()
+        continue
+      }
       if ($request.HttpMethod -ne 'GET' -and $request.HttpMethod -ne 'HEAD') { Send-Json $context 405 @{ error = 'Método no permitido.' }; continue }
       if ($path -eq '/') { $path = '/index.html' }
       $publicFiles = @('/index.html','/app.js','/styles.css','/roles.css','/assets/parking-background.jpg')
