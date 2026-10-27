@@ -71,6 +71,7 @@ try {
         $allowed = @('free','occupied','reserved','blocked')
         for ($i = 0; $i -lt 60; $i++) { if ([int]$state.spaces[$i].id -ne ($i + 1) -or $state.spaces[$i].state -notin $allowed) { $validState = $false; break } }
         if (-not $validState) { Send-Json $stream '400 Bad Request' @{ error = 'La distribución de espacios no es válida.' }; continue }
+        if (@($state.spaces | Where-Object { $_.state -eq 'blocked' }).Count -gt 10) { Send-Json $stream '400 Bad Request' @{ error = 'Bloqueo máximo 10: no se permiten más espacios bloqueados.' }; continue }
         $current = Get-StateEnvelope
         if ([int]$payload.revision -ne [int]$current.revision) { Send-Json $stream '409 Conflict' $current; continue }
         $next = [pscustomobject]@{ revision = ([int]$current.revision + 1); state = $state }
